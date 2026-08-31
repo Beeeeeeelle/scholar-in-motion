@@ -8,7 +8,7 @@
 
 An open-source Jekyll portfolio for researchers whose work moves across scholarship, teaching, service, and design.
 
-[View the demo](https://beeeeeeeelle.github.io/scholar-in-motion/) · [Use this template](https://github.com/Beeeeeeelle/scholar-in-motion/generate) · [Customization guide](CUSTOMIZE.md)
+[View the demo](https://beeeeeeelle.github.io/scholar-in-motion/) · [Use this template](https://github.com/Beeeeeeelle/scholar-in-motion/generate) · [Customization guide](CUSTOMIZE.md)
 
 ![Scholar in Motion homepage preview](docs/images/preview.png)
 

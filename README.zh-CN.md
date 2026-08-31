@@ -8,7 +8,7 @@
 
 一个面向研究者的开源 Jekyll 个人网站模板，用于组织研究、教学、服务与设计实践。
 
-[查看演示网站](https://beeeeeeeelle.github.io/scholar-in-motion/) · [使用此模板](https://github.com/Beeeeeeelle/scholar-in-motion/generate) · [自定义指南](CUSTOMIZE.md)
+[查看演示网站](https://beeeeeeelle.github.io/scholar-in-motion/) · [使用此模板](https://github.com/Beeeeeeelle/scholar-in-motion/generate) · [自定义指南](CUSTOMIZE.md)
 
 ![Scholar in Motion 首页预览](docs/images/preview.png)
 

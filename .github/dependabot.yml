@@ -4,6 +4,9 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+    ignore:
+      # github-pages currently pins this transitive dependency to 0.2.1.
+      - dependency-name: jekyll-include-cache
   - package-ecosystem: github-actions
     directory: "/"
     schedule:

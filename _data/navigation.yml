@@ -1,0 +1,16 @@
+main:
+  - title: Research
+    url: /research/
+    enabled: true
+  - title: Publications
+    url: /publications/
+    enabled: true
+  - title: Teaching
+    url: /teaching/
+    enabled: true
+  - title: Service
+    url: /service/
+    enabled: true
+  - title: Design & Development
+    url: /design/
+    enabled: true

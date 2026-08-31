@@ -1,0 +1,146 @@
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+{% capture menu_label %}{{ site.data.ui-text[site.locale].menu_label | default: "Menu" }}{% endcapture %}
+{% capture close_menu_label %}{{ site.data.ui-text[site.locale].close_label | default: "Close menu" }}{% endcapture %}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        {% unless logo_path == empty %}
+          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+        {% endunless %}
+        <a class="site-title" href="{{ '/' | relative_url }}">
+          <img class="site-mark" src="{{ '/assets/images/site-mark.svg' | relative_url }}" alt="" aria-hidden="true">
+          {{ site.masthead_title | default: site.title | escape_once | strip }}
+          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+        </a>
+        <ul class="visible-links">
+          {%- for link in site.data.navigation.main -%}
+            {%- if link.enabled != false -%}
+            {%- assign has_children = link.children and link.children.size > 0 -%}
+            <li class="masthead__menu-item{% if has_children %} has-submenu{% endif %}">
+              <a
+                {% if link.url %}
+                  href="{{ link.url | relative_url }}"
+                {% else %}
+                  href="#"
+                {% endif %}
+                {% if link.description %} title="{{ link.description }}"{% endif %}
+                {% if link.target %} target="{{ link.target }}"{% endif %}
+                {% if has_children %} aria-haspopup="true"{% endif %}
+              >{{ link.title }}{% if has_children %}<span class="masthead__submenu-caret" aria-hidden="true">▾</span>{% endif %}</a>
+              {% if has_children %}
+                <ul class="masthead__submenu">
+                  {%- for child in link.children -%}
+                    <li class="masthead__submenu-item">
+                      <a
+                        href="{{ child.url | relative_url }}"
+                        {% if child.description %} title="{{ child.description }}"{% endif %}
+                        {% if child.target %} target="{{ child.target }}"{% endif %}
+                      >{{ child.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {% endif %}
+            </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {% if site.search == true %}
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+          <i class="fas fa-search"></i>
+        </button>
+        {% endif %}
+        {% if site.features.bilingual %}<button id="bl-lang-toggle" class="bl-lang-toggle" type="button" aria-label="Switch language">中</button>{% endif %}
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav__bar">
+          <a class="mobile-nav__brand" href="{{ '/' | relative_url }}">
+            <span class="mobile-nav__brand-logo">
+              <img src="{{ '/assets/images/site-mark.svg' | relative_url }}" alt="">
+            </span>
+            <span class="mobile-nav__brand-text">
+              {{ site.masthead_title | default: site.title | escape_once | strip }}
+              {% if site.subtitle %}<span class="mobile-nav__brand-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+            </span>
+          </a>
+          <div class="mobile-nav__actions">
+            {% if site.features.bilingual %}<button class="bl-lang-toggle mobile-nav__lang" type="button" aria-label="Switch language">中</button>{% endif %}
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-haspopup="dialog">
+              <span class="mobile-nav__toggle-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_toggle_label | default: "Toggle menu" }}</span>
+            </button>
+          </div>
+        </div>
+        <div class="mobile-nav__overlay" data-mobile-nav-overlay hidden aria-hidden="true"></div>
+        <div class="mobile-nav__panel" id="mobile-nav-panel" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+          <div class="mobile-nav__panel-header">
+            <span class="mobile-nav__panel-title">{{ menu_label | strip }}</span>
+            <button class="mobile-nav__close" type="button">
+              <span class="visually-hidden">{{ close_menu_label | strip }}</span>
+            </button>
+          </div>
+          <ul class="mobile-nav__list">
+            {%- for link in site.data.navigation.main -%}
+              {%- if link.enabled != false -%}
+              {%- assign has_children = link.children and link.children.size > 0 -%}
+              <li class="mobile-nav__item{% if has_children %} has-children{% endif %}">
+                <a
+                  class="mobile-nav__link"
+                  {% if link.url %}
+                    href="{{ link.url | relative_url }}"
+                  {% else %}
+                    href="#"
+                  {% endif %}
+                  {% if link.description %} title="{{ link.description }}"{% endif %}
+                  {% if link.target %} target="{{ link.target }}"{% endif %}
+                >{{ link.title }}</a>
+                {% if has_children %}
+                  <ul class="mobile-nav__sublist">
+                    {%- for child in link.children -%}
+                      <li class="mobile-nav__subitem">
+                        <a
+                          class="mobile-nav__sublink"
+                          href="{{ child.url | relative_url }}"
+                          {% if child.description %} title="{{ child.description }}"{% endif %}
+                          {% if child.target %} target="{{ child.target }}"{% endif %}
+                        >{{ child.title }}</a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {% endif %}
+              </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+/* Keep all nav items visible — counteract greedy-nav overflow hiding */
+(function () {
+  var interval = setInterval(function () {
+    var nav = document.querySelector('.greedy-nav');
+    if (!nav) return;
+    var hidden  = nav.querySelector('.hidden-links');
+    var visible = nav.querySelector('.visible-links');
+    if (!hidden || !visible) return;
+    function restore() {
+      while (hidden.children.length > 0) {
+        visible.appendChild(hidden.children[0]);
+      }
+    }
+    restore();
+    new MutationObserver(restore).observe(hidden, { childList: true });
+    clearInterval(interval);
+  }, 50);
+})();
+</script>

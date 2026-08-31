@@ -1,0 +1,270 @@
+<style>
+.news-section {
+  margin: 52px 0 0;
+}
+.news-section__heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.news-section__yay {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-filters {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.news-filters__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.news-filter {
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  color: #607084;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.06);
+  transition: box-shadow 0.18s ease, transform 0.18s ease, color 0.18s ease;
+}
+.news-filter:hover {
+  color: #253142;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.16), 1px 1px 2px rgba(0,0,0,0.07);
+  transform: translateY(-1px);
+}
+.news-filter.is-active {
+  background: #fff;
+  color: #184680;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1), inset -1px -1px 3px rgba(255,255,255,0.8);
+}
+.news-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.news-item:last-child {
+  border-bottom: none;
+}
+.news-item__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  width: 48px;
+}
+.news-item__icon {
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.13), 1px 1px 2px rgba(0,0,0,0.07);
+}
+.news-item__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.news-item__date {
+  font-size: 10.5px;
+  color: #aaa;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+.news-item__body {
+  flex: 1;
+  min-width: 0;
+}
+.news-item__text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #333;
+  margin: 0;
+}
+.news-item__text a {
+  color: #2a52a0;
+  text-decoration: none;
+}
+.news-item__text a:hover {
+  text-decoration: underline;
+}
+.news-item__action {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 1px solid #d7e2ee;
+  border-radius: 999px;
+  background: #fff;
+  color: #3d628f;
+  font-size: 10.75px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+.news-item__action:hover,
+.news-item__action:focus-visible {
+  border-color: #b8cadc;
+  background: #f8fbff;
+  color: #254f82;
+  text-decoration: none;
+}
+.news-item__img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+  margin-left: 10px;
+  display: block;
+  cursor: zoom-in;
+}
+.news-item--linked {
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+.news-item--linked:hover {
+  background: #f7f9fd;
+}
+.news-item.is-hidden {
+  display: none;
+}
+.news-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+.news-more__count {
+  margin: 0;
+  font-size: 11.5px;
+  color: #9aa5b1;
+}
+.news-more__btn {
+  cursor: pointer;
+  border: 1px solid #dbe4ee;
+  background: #fff;
+  color: #49647f;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+.news-more__btn:hover {
+  transform: translateY(-1px);
+  border-color: #b9c9da;
+  background: #f8fbff;
+}
+.news-more__btn[hidden],
+.news-more[hidden] {
+  display: none;
+}
+@media (max-width: 760px) {
+  .news-item {
+    gap: 10px;
+  }
+  .news-item__img {
+    width: 68px;
+    height: 52px;
+    margin-left: 4px;
+  }
+}
+</style>
+
+
+<section class="news-section">
+  <h2 class="news-section__heading" data-reveal>News &amp; Activity</h2>
+  <div class="news-filters" data-news-filters data-reveal>
+    <div class="news-filters__group" data-news-type-group></div>
+    <div class="news-filters__group" data-news-year-group></div>
+  </div>
+  <ul class="news-list" data-reveal-group data-reveal-step="62">
+    {% for item in site.data.news %}
+    <li class="news-item{% if item.url %} news-item--linked{% endif %}"
+      data-news-type="{{ item.type }}"
+      data-news-year="{{ item.date | slice: -4, 4 }}"
+      data-reveal
+      {% if item.url %}onclick="window.open('{{ item.url }}','_blank')"{% endif %}>
+      <div class="news-item__left">
+        <div class="news-item__icon news-icon--{{ item.type }}">
+          {% if item.type == "award" %}
+          <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          {% elsif item.type == "paper" %}
+          <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          {% elsif item.type == "talk" %}
+          <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+          {% elsif item.type == "event" %}
+          <svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          {% elsif item.type == "grant" %}
+          <svg viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+          {% elsif item.type == "media" %}
+          <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          {% else %}
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          {% endif %}
+        </div>
+        <span class="news-item__date">{{ item.date }}</span>
+      </div>
+      <div class="news-item__body">
+        <p class="news-item__text">{{ item.text }}</p>
+        {% if item.cta_url %}
+        <a class="news-item__action" href="{{ item.cta_url }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">{{ item.cta_label | default: "Learn more" }}</a>
+        {% endif %}
+      </div>
+      {% if item.image %}
+      <img class="news-item__img" src="{{ item.image }}" alt="{{ item.image_alt | default: item.type }}" loading="lazy" decoding="async">
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <div class="news-more" data-news-more>
+    <p class="news-more__count" data-news-count></p>
+    <button class="news-more__btn" type="button" data-news-toggle>View more</button>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use Scholar in Motion in your website, workshop, or research infrastructure, please cite this repository."
+title: "Scholar in Motion"
+type: software
+authors:
+  - family-names: "Li"
+    given-names: "Belle"
+version: 0.1.0
+date-released: "2026-08-31"
+license: MIT
+repository-code: "https://github.com/Beeeeeeelle/scholar-in-motion"
+url: "https://beeeeeeeelle.github.io/scholar-in-motion/"
+keywords:
+  - academic portfolio
+  - Jekyll
+  - GitHub Pages
+  - research website
+  - open source template

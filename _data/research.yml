@@ -1,0 +1,85 @@
+eyebrow: Research map
+title: A connected research program
+intro: Use two, three, or four regions to show how the major parts of your scholarship relate. Each point can link to a publication or project.
+core:
+  title: Your research program
+  subtitle: The idea connecting your work
+  url: /research/
+
+# Keep any 2, 3, or 4 strands. The map rearranges itself automatically.
+strands:
+  - id: questions
+    title: Core questions
+    short_title: Questions
+    question: What phenomenon, tension, or problem anchors this part of your work?
+    color: blue
+    url: /research/#questions
+    overview: Explain the central question, its intellectual context, and why it matters. Add findings, projects, or future directions that belong together here.
+    works:
+      - title: Selected publication or project
+        venue: Journal, press, or project venue
+        year: 2026
+        status: Published
+        url: /publications/
+      - title: A second contribution in this strand
+        venue: Journal or conference
+        year: 2025
+        status: Published
+        url: /publications/
+      - title: Current study or work in progress
+        venue: Research project
+        year: 2026
+        status: In progress
+  - id: contexts
+    title: People & contexts
+    short_title: Contexts
+    question: Whose experiences, settings, or institutions does this strand help us understand?
+    color: rose
+    url: /research/#contexts
+    overview: Use this strand to make visible the people, places, materials, or histories that shape your scholarship.
+    works:
+      - title: Selected publication or project
+        venue: Journal, press, or project venue
+        year: 2026
+        status: Accepted
+        url: /publications/
+      - title: A second contribution in this strand
+        venue: Journal or conference
+        year: 2025
+        status: Published
+        url: /publications/
+  - id: evidence
+    title: Evidence & explanation
+    short_title: Evidence
+    question: What forms of evidence help you describe patterns, explain mechanisms, or test ideas?
+    color: green
+    url: /research/#evidence
+    overview: Describe the evidence and analytic choices that let you move from observation to explanation.
+    works:
+      - title: Selected publication or project
+        venue: Journal, press, or project venue
+        year: 2025
+        status: Published
+        url: /publications/
+      - title: Current study or work in progress
+        venue: Research project
+        year: 2026
+        status: In progress
+  - id: impact
+    title: Translation & impact
+    short_title: Impact
+    question: How does this work move into practice, policy, design, or public conversation?
+    color: gold
+    url: /research/#impact
+    overview: Show how ideas travel beyond a paper through tools, partnerships, teaching, policy, or public-facing work.
+    works:
+      - title: Selected publication or project
+        venue: Journal, press, or project venue
+        year: 2026
+        status: Published
+        url: /publications/
+      - title: A tool, resource, partnership, or public output
+        venue: Applied or public-facing project
+        year: 2025
+        status: In progress
+

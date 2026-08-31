@@ -1,0 +1,55 @@
+intro: Use this page for tools, curricula, exhibitions, archives, websites, prototypes, and other forms through which scholarship becomes usable.
+overview:
+  - title: Products & tools
+    copy: Digital or physical things built for a defined audience and purpose.
+  - title: Learning design
+    copy: Courses, curricula, workshops, and resources shaped through evidence and iteration.
+  - title: Communication
+    copy: Visual systems, public scholarship, media, and information design.
+  - title: Evaluation
+    copy: Needs assessment, usability work, and evidence used to improve programs or products.
+sections:
+  - key: featured
+    heading: Featured Project
+    layout: feature
+    items:
+      - eyebrow: Live project · Your role · Current status
+        title: A Project with a Clear User and Purpose
+        copy: Lead with the project that best shows how you move from a research or learning problem to something people can use.
+        image: /assets/images/gallery-making.svg
+        image_alt: Replace with a product, project, or process image
+        caption: Replace with a concise artifact caption.
+        bullets:
+          - "<strong>Problem:</strong> identify the need, audience, and context."
+          - "<strong>Contribution:</strong> state what you designed, built, researched, or led."
+          - "<strong>Learning:</strong> explain what testing, feedback, or use changed."
+        actions:
+          - label: View project
+            url: "#"
+  - key: additional_projects
+    heading: Additional Projects
+    layout: two
+    items:
+      - eyebrow: Project type · Contribution
+        title: A Second Project
+        copy: Use a smaller panel for work that expands the range of the portfolio without competing with the featured project.
+        image: /assets/images/gallery-fieldwork.svg
+        image_alt: Replace with a project image
+        bullets:
+          - "State the audience, your role, and one meaningful outcome."
+      - eyebrow: Project type · Contribution
+        title: A Third Project
+        copy: Group related work when that makes the page easier to scan and compare.
+        image: /assets/images/gallery-making.svg
+        image_alt: Replace with a project image
+        bullets:
+          - "Link to a live site, repository, case study, or downloadable resource when available."
+  - key: evaluation
+    heading: Evaluation & Improvement
+    layout: two
+    items:
+      - eyebrow: Optional component
+        title: Evidence for Iteration
+        copy: Enable this section when assessment, usability, or evaluation is itself an important part of the work.
+        bullets:
+          - "Name the evidence collected and the decision it informed."

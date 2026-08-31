@@ -1,0 +1,48 @@
+intro: Present service as intellectual, institutional, and community work rather than as an unstructured list of memberships.
+overview:
+  - title: Leadership
+    copy: Working groups, program roles, association leadership, or community stewardship.
+  - title: Knowledge sharing
+    copy: Invited talks, workshops, public scholarship, and resources for professional communities.
+  - title: Scholarly review
+    copy: Journal, conference, grant, award, or editorial review that supports the field.
+sections:
+  - key: featured
+    heading: Professional Service
+    layout: feature
+    items:
+      - eyebrow: Knowledge sharing
+        title: Invited Talks & Workshops
+        copy: Use a featured panel to explain how your service translates expertise into useful conversations, methods, or resources.
+        image: /assets/images/gallery-fieldwork.svg
+        image_alt: Replace with an event, workshop, or service image
+        bullets:
+          - "<strong>Recent invitations:</strong> list a small number of representative venues."
+          - "<strong>Recurring themes:</strong> show the expertise you are asked to share."
+          - "<strong>Community:</strong> identify who the work is designed to support."
+  - key: leadership
+    heading: Leadership & Community
+    layout: two
+    items:
+      - eyebrow: Association or program work
+        title: Building Scholarly Community
+        copy: Describe the structures, communications, events, or partnerships you help sustain.
+        bullets:
+          - "Name a role and the concrete work it required."
+          - "Show how the contribution strengthened participation or continuity."
+      - eyebrow: Mentoring and access
+        title: Supporting Participation in the Field
+        copy: Include mentoring or outreach when it functions as meaningful field-building work.
+        bullets:
+          - "Describe who was supported and how."
+          - "Connect the activity to a larger professional or public purpose."
+  - key: review
+    heading: Scholarly Review
+    layout: two
+    items:
+      - eyebrow: Optional component
+        title: Editorial, Proposal, & Award Review
+        copy: Enable this section when review service is substantial enough to interpret rather than merely list.
+        bullets:
+          - "Group venues by field or responsibility instead of presenting a certificate archive."
+

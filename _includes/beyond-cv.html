@@ -1,0 +1,163 @@
+<style>
+/* ── Beyond the CV gallery ── */
+.bcv {
+  margin: 2.5rem 0 1rem;
+}
+.bcv__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 14px;
+}
+.bcv__heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #bbb;
+  margin: 0;
+}
+.bcv__controls {
+  display: flex;
+  gap: 8px;
+}
+.bcv__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #dde5ef;
+  background: rgba(255, 255, 255, 0.96);
+  color: #5d6b7b;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+.bcv__btn:hover {
+  transform: translateY(-1px);
+  border-color: #c7d3e1;
+  color: #223044;
+  background: #fff;
+}
+.bcv__btn:disabled {
+  opacity: 0.42;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+  color: #a4b0bf;
+}
+.bcv__wrap {
+  position: relative;
+}
+.bcv__wrap::before,
+.bcv__wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  pointer-events: none;
+  z-index: 1;
+}
+.bcv__wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.96), rgba(255,255,255,0));
+}
+.bcv__wrap::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(255,255,255,0.96), rgba(255,255,255,0));
+}
+.bcv__viewport {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 4px 14px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+.bcv__viewport::-webkit-scrollbar {
+  display: none;
+}
+.bcv__viewport.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+.bcv__item {
+  flex: 0 0 212px;
+  height: 170px;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  cursor: default;
+}
+.bcv__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.35s ease;
+}
+.bcv__item:hover img,
+.bcv__item:focus-within img {
+  transform: scale(1.05);
+}
+.bcv__cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 10px 8px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 500;
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.bcv__item:hover .bcv__cap,
+.bcv__item:focus-within .bcv__cap {
+  opacity: 1;
+}
+@media (max-width: 640px) {
+  .bcv__item {
+    flex-basis: 180px;
+    height: 154px;
+  }
+
+  .bcv__wrap::before,
+  .bcv__wrap::after {
+    width: 24px;
+  }
+}
+</style>
+
+<div class="bcv" data-bcv data-reveal>
+  <div class="bcv__top">
+    <p class="bcv__heading">Beyond the CV</p>
+    <div class="bcv__controls">
+      <button class="bcv__btn" type="button" data-bcv-prev aria-label="Scroll Beyond the CV gallery left">‹</button>
+      <button class="bcv__btn" type="button" data-bcv-next aria-label="Scroll Beyond the CV gallery right">›</button>
+    </div>
+  </div>
+  <div class="bcv__wrap">
+    <div class="bcv__viewport" data-bcv-viewport tabindex="0" aria-label="Beyond the CV image gallery">
+      {% for item in site.data.gallery %}
+      <figure class="bcv__item">
+        <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}">
+        <figcaption class="bcv__cap">{{ item.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</div>

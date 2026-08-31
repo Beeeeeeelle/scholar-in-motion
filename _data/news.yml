@@ -1,0 +1,39 @@
+- id: article-2026
+  date: Mar 2026
+  type: paper
+  text: "Published a new peer-reviewed article connected to the current research program."
+  url: /publications/
+- id: award-2026
+  date: Feb 2026
+  type: award
+  text: "Received recognition for a recent research or public scholarship project."
+- id: talk-2026
+  date: Jan 2026
+  type: talk
+  text: "Presented an invited talk for a scholarly or professional community."
+- id: project-2025
+  date: Dec 2025
+  type: project
+  text: "Launched an open resource developed with community partners."
+  url: /design/
+- id: teaching-2025
+  date: Nov 2025
+  type: teaching
+  text: "Designed a new course, workshop, or mentoring experience."
+- id: service-2025
+  date: Oct 2025
+  type: service
+  text: "Organized a cross-disciplinary workshop for educators and researchers."
+- id: article-2025
+  date: Sep 2025
+  type: paper
+  text: "Published a study addressing one of the portfolio's core questions."
+  url: /publications/
+- id: collaboration-2025
+  date: Aug 2025
+  type: project
+  text: "Started a collaborative design study with a community learning partner."
+- id: conference-2025
+  date: Jul 2025
+  type: talk
+  text: "Shared early findings at an international education conference."

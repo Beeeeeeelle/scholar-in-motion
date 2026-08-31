@@ -1,0 +1,21 @@
+name: Validate template
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+      - run: ruby -c scripts/configure.rb
+      - run: ruby scripts/configure.rb --dry-run < /dev/null
+      - run: bundle exec jekyll build

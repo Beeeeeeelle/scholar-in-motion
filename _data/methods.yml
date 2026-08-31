@@ -1,0 +1,16 @@
+eyebrow: Evidence and approach
+intro: Use this optional section to connect your questions to the evidence, methods, or forms of practice that move the work forward.
+items:
+  - title: Pattern and scale
+    copy: Name the evidence you use to identify patterns, compare cases, or estimate change.
+    symbol: 01
+  - title: Experience and meaning
+    copy: Describe how you learn from participants, texts, settings, or lived experience.
+    symbol: 02
+  - title: Making and testing
+    copy: Show how prototypes, interventions, archives, or experiments develop the inquiry.
+    symbol: 03
+  - title: Partnership and use
+    copy: Explain how collaborators, communities, or institutions shape the work and its use.
+    symbol: 04
+

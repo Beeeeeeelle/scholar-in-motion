@@ -1,0 +1,71 @@
+{% assign research = site.data.research %}
+{% assign map_limit = include.limit | default: 4 %}
+{% assign strands = research.strands | slice: 0, map_limit %}
+{% assign strand_count = strands | size %}
+{% assign map_id = include.id_suffix | default: "main" %}
+{% assign dot_positions = "28,36|45,27|63,39|34,58|57,62" | split: "|" %}
+
+<section class="research-atlas" data-research-map data-count="{{ strand_count }}" aria-labelledby="research-atlas-title-{{ map_id }}">
+  <header class="research-atlas__header" data-reveal>
+    <p class="research-atlas__eyebrow">{{ research.eyebrow }}</p>
+    <h2 id="research-atlas-title-{{ map_id }}">{% if include.heading %}{{ include.heading }}{% else %}{{ research.title }}{% endif %}</h2>
+    <p>{{ research.intro }}</p>
+  </header>
+
+  <div class="research-atlas__stage" data-reveal>
+    <svg class="research-atlas__threads" viewBox="0 0 900 620" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M450 310 C382 252 292 208 188 176" />
+      <path d="M450 310 C520 250 612 208 716 176" />
+      <path d="M450 310 C382 372 292 420 188 458" />
+      <path d="M450 310 C520 372 612 420 716 458" />
+    </svg>
+
+    {% for strand in strands limit: 4 %}
+      <article class="research-region research-region--{{ forloop.index }} research-region--{{ strand.color }}" data-research-region data-strand="{{ strand.id }}">
+        <div class="research-region__shape" aria-hidden="true"></div>
+        <div class="research-region__sketch" aria-hidden="true"></div>
+        <a class="research-region__label" href="{{ strand.url | relative_url }}">
+          <span>{{ strand.title }}</span>
+        </a>
+        <p class="research-region__question">{{ strand.question }}</p>
+
+        <div class="research-region__works" aria-label="Selected work in {{ strand.title }}">
+          {% for work in strand.works limit: 5 %}
+            {% assign dot_index = forloop.index0 | modulo: 5 %}
+            {% assign dot_xy = dot_positions[dot_index] | split: "," %}
+            <button
+              class="research-dot"
+              type="button"
+              style="--dot-x: {{ dot_xy[0] }}%; --dot-y: {{ dot_xy[1] }}%; --dot-delay: {{ forloop.index0 | times: 0.12 }}s;"
+              aria-label="{{ work.title }}"
+              data-work-title="{{ work.title | escape }}"
+              data-work-venue="{{ work.venue | escape }}"
+              data-work-year="{{ work.year }}"
+              data-work-status="{{ work.status | escape }}"
+              {% if work.url %}data-work-url="{{ work.url | relative_url }}"{% endif %}
+            ></button>
+          {% endfor %}
+        </div>
+      </article>
+    {% endfor %}
+
+    <a class="research-atlas__core" href="{{ research.core.url | relative_url }}">
+      <span class="research-atlas__core-kicker">Research program</span>
+      <strong>{{ research.core.title }}</strong>
+      <span>{{ research.core.subtitle }}</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+  </div>
+
+  <div class="research-atlas__legend" aria-hidden="true">
+    {% for strand in strands limit: 4 %}<span class="research-atlas__legend-item research-atlas__legend-item--{{ strand.color }}">{{ strand.short_title }}</span>{% endfor %}
+  </div>
+
+  <div class="research-popover" data-research-popover role="dialog" aria-live="polite" hidden>
+    <button class="research-popover__close" type="button" aria-label="Close publication detail">×</button>
+    <p class="research-popover__title"></p>
+    <p class="research-popover__venue"></p>
+    <div class="research-popover__meta"></div>
+    <a class="research-popover__link" href="#">View work <span aria-hidden="true">→</span></a>
+  </div>
+</section>

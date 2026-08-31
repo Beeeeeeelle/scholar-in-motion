@@ -1,0 +1,28 @@
+<!-- Prevent FOUC: hide until all stylesheets (including versioned re-fetch) are applied -->
+<style>html{visibility:hidden}</style>
+<noscript><style>html{visibility:visible}</style></noscript>
+<script>document.addEventListener('DOMContentLoaded',function(){document.documentElement.style.visibility='visible';})</script>
+<meta name="author" content="{{ site.author.name | default: site.title }}">
+<meta name="copyright" content="© {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}. All rights reserved.">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+{% if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" %}
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"{{ site.cloudflare_analytics_token }}"}'></script>
+{% endif %}
+<script>window.SCHOLAR_TEMPLATE={customCursor:{% if site.features.custom_cursor == false %}false{% else %}true{% endif %}};</script>
+<script>
+  (function() {
+    var version = "{{ site.time | date: '%s' }}";
+    var stylesheet = document.querySelector('link[href*="/assets/css/main.css"]');
+
+    if (!stylesheet) return;
+
+    try {
+      var url = new URL(stylesheet.getAttribute('href'), window.location.origin);
+      if (url.searchParams.get('v') === version) return;
+      url.searchParams.set('v', version);
+      stylesheet.href = url.pathname + url.search + url.hash;
+    } catch (error) {
+      console.warn('Unable to version main.css.', error);
+    }
+  })();
+</script>

@@ -1,0 +1,39 @@
+headline: Research, teaching, and practice in conversation.
+proof_points:
+  - label: Current question
+    url: /research/
+    color: green
+  - label: Selected work
+    url: /research/
+    color: blue
+  - label: Teaching practice
+    url: /teaching/
+    color: rose
+  - label: Public scholarship
+    url: /design/
+    color: gold
+  - label: Recent publication
+    url: /publications/
+    color: rose
+  - label: Open resources
+    url: /design/
+    color: blue
+
+intro:
+  - I am a scholar working at the intersection of research, teaching, and practice. Use this opening to name the problem you study, the communities you work with, and why the question matters.
+  - My work brings <mark>evidence and practice into conversation</mark>. Replace this paragraph with the approaches you use, the things you make, and the contribution you hope your work will have.
+
+initiative:
+  enabled: true
+  title: Current collaboration
+  status: now developing
+  copy: Highlight one active lab initiative, community partnership, workshop series, or collaborative project here.
+  action_label: Collaborate or co-design
+  action_url: mailto:you@example.edu
+  note: Open to collaborators
+
+question: "Use one question to connect the portfolio: how can your work contribute to"
+question_terms:
+  - knowledge
+  - practice
+  - public value

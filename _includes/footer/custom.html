@@ -1,0 +1,9 @@
+<div class="template-footer-note">
+  <p>© {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }} · Built with Scholar in Motion.</p>
+  <p>Research, teaching, and design in one connected portfolio.</p>
+</div>
+<script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/mobile-nav.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/site-interactions.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/research-map.js' | relative_url }}" defer></script>
+{% if site.features.bilingual %}<script src="{{ '/assets/js/lang-toggle.js' | relative_url }}" defer></script>{% endif %}

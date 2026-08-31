@@ -1,0 +1,13 @@
+- image: /assets/images/gallery-fieldwork.svg
+  alt: A placeholder for a fieldwork or collaboration photograph
+  caption: Fieldwork and collaboration
+- image: /assets/images/gallery-teaching.svg
+  alt: A placeholder for a teaching photograph
+  caption: Teaching in practice
+- image: /assets/images/gallery-making.svg
+  alt: A placeholder for a making or design photograph
+  caption: Designing and building
+- image: /assets/images/gallery-life.svg
+  alt: A placeholder for a personal photograph
+  caption: Beyond the CV
+

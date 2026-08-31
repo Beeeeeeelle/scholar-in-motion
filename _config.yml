@@ -1,0 +1,103 @@
+title: Your Name
+masthead_title: Your Name
+locale: en-US
+email: you@example.edu
+description: A flexible academic portfolio for research, teaching, service, and design work.
+url: ""
+baseurl: ""
+timezone: America/New_York
+
+minimal_mistakes_skin: default
+remote_theme: mmistakes/minimal-mistakes@4.28.0
+search: true
+markdown: kramdown
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+include:
+  - _pages
+
+exclude:
+  - CHANGELOG.md
+  - CITATION.cff
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - CUSTOMIZE.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - README.zh-CN.md
+  - SECURITY.md
+  - SETUP.md
+  - SUPPORT.md
+  - THIRD_PARTY_NOTICES.md
+  - docs
+  - scripts
+  - vendor
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+# Leave blank until you add a Cloudflare Web Analytics site token.
+cloudflare_analytics_token: ""
+
+features:
+  bilingual: false
+  custom_cursor: true
+
+author:
+  name: Your Name, Ph.D.
+  avatar: /assets/images/avatar-placeholder.svg
+  bio: '<span class="author-role">Your academic role</span><br><span class="author-tagline">A short statement of the question, community, or practice that guides your work.</span><br>Your University'
+  links:
+    - label: City, State
+      icon: fas fa-fw fa-map-marker-alt
+      url: https://maps.google.com
+    - label: Email
+      icon: fas fa-fw fa-envelope-square
+      url: mailto:you@example.edu
+    - label: Google Scholar
+      icon: fa fa-graduation-cap
+      url: https://scholar.google.com
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com
+    - label: CV
+      icon: far fa-fw fa-file-alt
+      url: /cv/
+
+footer:
+  links: []
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      classes: wide
+  - scope:
+      path: _pages
+      type: pages
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

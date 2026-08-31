@@ -1,0 +1,57 @@
+intro: Describe what learners are invited to do, how your courses are designed, and what evidence helps you improve the experience.
+overview:
+  - title: Teaching focus
+    copy: Name the learners, fields, or questions that define your teaching practice.
+  - title: Course design
+    copy: Summarize the structures, materials, and feedback routines you design.
+  - title: Mentoring
+    copy: Explain how you support developing scholars, practitioners, or collaborators.
+sections:
+  - key: featured
+    heading: Current Teaching
+    layout: feature
+    items:
+      - eyebrow: Institution · Department or Program
+        title: Course Design, Facilitation, and Mentoring
+        copy: Use one featured panel for the course or teaching context that best demonstrates your approach.
+        image: /assets/images/gallery-teaching.svg
+        image_alt: Replace with a course, classroom, or teaching image
+        caption: Replace with a concise description of the teaching artifact.
+        bullets:
+          - "<strong>Course or program:</strong> identify your role, audience, and instructional setting."
+          - "<strong>Design choice:</strong> name one decision that made learning clearer, more inclusive, or more meaningful."
+          - "<strong>Evidence:</strong> note what learner work, feedback, or outcomes informed your next iteration."
+  - key: additional_contexts
+    heading: Teaching Across Contexts
+    layout: two
+    items:
+      - eyebrow: Context one
+        title: A Second Teaching Context
+        copy: Use this panel for another institution, modality, community, or stage of learner development.
+        bullets:
+          - "<strong>Experience:</strong> summarize courses, workshops, or instructional leadership."
+          - "<strong>Approach:</strong> connect concrete practices to your teaching commitments."
+      - eyebrow: Context two
+        title: Program or Curriculum Leadership
+        copy: Show work that extends beyond a single course into mentoring, curriculum, or program design.
+        bullets:
+          - "<strong>Responsibility:</strong> describe the scale and scope of your contribution."
+          - "<strong>Result:</strong> name what changed for learners, colleagues, or the program."
+  - key: mentoring
+    heading: Mentoring
+    layout: two
+    items:
+      - eyebrow: Optional component
+        title: Supporting Emerging Scholars
+        copy: Enable this section when mentoring is a substantial part of the story.
+        bullets:
+          - "Describe advising, research supervision, peer learning, or professional development."
+  - key: evidence_gallery
+    heading: Teaching in Practice
+    layout: gallery
+    items:
+      - title: Learning in practice
+        copy: Add photographs or artifacts only when they contribute evidence or context.
+        image: /assets/images/gallery-teaching.svg
+        image_alt: Replace with teaching evidence
+

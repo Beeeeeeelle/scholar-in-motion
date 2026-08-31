@@ -1,0 +1,44 @@
+{% assign publications = site.data.publications %}
+{% assign publication_components = site.data.components.publications %}
+
+{% if publication_components.featured and publications.featured %}
+<section class="pub-section pub-section--featured" id="featured-publications" data-reveal>
+  <h2>Selected Publication</h2>
+  {% for entry in publications.featured %}
+  <article class="bl-pcard{% if entry.lead %} bl-pcard--lead{% endif %}">
+    {% if entry.image %}<img class="bl-pcard__thumb" src="{{ entry.image | relative_url }}" alt="{{ entry.image_alt }}" loading="lazy">{% endif %}
+    <div class="bl-pcard__body">
+      <div class="bl-pcard__title">{{ entry.title }}</div>
+      <div class="bl-pcard__authors">{{ entry.authors }}</div>
+      <div class="bl-pcard__venue">{{ entry.venue }}</div>
+      {% if entry.doi %}<div class="pub-tags"><a class="pub-tag pub-tag--doi" href="{{ entry.doi }}">DOI</a></div>{% endif %}
+      {% if entry.recognition %}<div class="pub-recognition"><div><div class="pub-recognition__label">Optional context</div><div class="pub-recognition__title">{{ entry.recognition.title }}</div><div class="pub-recognition__body">{{ entry.recognition.copy }}</div></div></div>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% for section in publications.sections %}
+  {% assign section_enabled = publication_components[section.key] %}
+  {% if section_enabled %}
+  <section class="pub-section" id="{{ section.id }}" data-reveal>
+    <h2>{{ section.title }}</h2>
+    {% if section.key == "peer_reviewed" %}<div class="pub-first-note"><span></span>{{ publications.author_note }}</div>{% endif %}
+    {% for year_group in section.years %}
+      <div class="pub-year">{{ year_group.year }}</div>
+      {% for entry in year_group.entries %}
+      <article class="pub-entry">
+        {% if entry.lead %}<span class="pub-entry__dot"></span>{% else %}<span class="pub-entry__dot--empty"></span>{% endif %}
+        <div class="pub-entry__body">
+          {{ entry.authors }} ({{ year_group.year }}). {{ entry.title }} <em>{{ entry.venue }}</em>
+          {% if entry.status %}<span class="pub-status">{{ entry.status }}</span>{% endif %}
+          {% if entry.doi %}<div class="pub-tags"><a class="pub-tag pub-tag--doi" href="{{ entry.doi }}">DOI</a></div>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    {% endfor %}
+  </section>
+  {% endif %}
+{% endfor %}
+

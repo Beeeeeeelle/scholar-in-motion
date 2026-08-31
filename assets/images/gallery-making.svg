@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" role="img" aria-label="Replaceable design visual">
+  <rect width="640" height="460" fill="#f5faf7"/>
+  <rect x="106" y="96" width="428" height="278" rx="12" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <circle cx="158" cy="142" r="10" fill="#c8868e"/>
+  <circle cx="190" cy="142" r="10" fill="#d1a760"/>
+  <circle cx="222" cy="142" r="10" fill="#82b896"/>
+  <path d="M163 211h144v104H163zM340 211h137M340 250h98M340 289h121" fill="none" stroke="#7b9cc8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/>
+  <path d="m262 235 36 28-36 28Z" fill="#e05a2b"/>
+  <path d="M72 398c112-34 209-32 313 3 66 22 124 18 183-4" fill="none" stroke="#e05a2b" stroke-width="4" stroke-dasharray="7 12"/>
+  <text x="32" y="52" fill="#353b44" font-family="Georgia, serif" font-size="25">designing and building</text>
+</svg>
+

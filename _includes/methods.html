@@ -1,0 +1,17 @@
+{% assign methods = site.data.methods %}
+<section class="home-methods" data-reveal>
+  <p class="home-methods__eyebrow">{{ methods.eyebrow }}</p>
+  <p class="home-methods__intro">{{ methods.intro }}</p>
+  <div class="home-methods__grid" data-reveal-group data-reveal-step="80">
+    {% for method in methods.items %}
+    <article class="home-methods__card" data-reveal>
+      <span class="home-methods__badge" aria-hidden="true">{{ method.symbol }}</span>
+      <div>
+        <h3 class="home-methods__card-title">{{ method.title }}</h3>
+        <p class="home-methods__card-copy">{{ method.copy }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+

@@ -1,0 +1,46 @@
+{% assign portfolio = include.data %}
+{% assign component_scope = site.data.components[include.scope] %}
+{% for section in portfolio.sections %}
+{% assign section_enabled = component_scope[section.key] %}
+{% if section_enabled != false %}
+<section class="portfolio-component portfolio-component--{{ section.key }}" id="{{ section.key | replace: '_', '-' }}" data-reveal>
+<h2>{{ section.heading }}</h2>
+{% if section.layout == "gallery" %}
+<div class="{{ include.prefix }}-photo-grid {{ include.prefix }}-photo-grid--wide" data-reveal-group data-reveal-step="84">
+{% for item in section.items %}
+<figure class="{{ include.prefix }}-photo" data-reveal>
+<div class="{{ include.prefix }}-photo__media"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}" loading="lazy"></div>
+<figcaption><h4>{{ item.title }}</h4><p>{{ item.copy }}</p></figcaption>
+</figure>
+{% endfor %}
+</div>
+{% else %}
+<div class="{{ include.prefix }}-panels{% if section.layout == 'two' %} {{ include.prefix }}-panels--two{% endif %}" data-reveal-group data-reveal-step="84">
+{% for item in section.items %}
+<article class="{{ include.prefix }}-panel{% if section.layout == 'feature' %} {{ include.prefix }}-panel--feature{% endif %}" data-reveal>
+{% if item.image %}
+<div class="{{ include.prefix }}-panel__media">
+<figure class="{{ include.prefix }}-panel__hero">
+<img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}" loading="lazy">
+{% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+</figure>
+</div>
+{% endif %}
+<div class="{{ include.prefix }}-panel__body">
+{% if item.eyebrow %}<p class="{{ include.prefix }}-panel__eyebrow">{{ item.eyebrow }}</p>{% endif %}
+<h3>{{ item.title }}</h3>
+<p>{{ item.copy }}</p>
+{% if item.bullets %}<ul>{% for bullet in item.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>{% endif %}
+{% if item.actions %}
+<div class="learning-panel__actions">
+{% for action in item.actions %}<a class="learning-panel__link" href="{{ action.url | relative_url }}">{{ action.label }}</a>{% endfor %}
+</div>
+{% endif %}
+</div>
+</article>
+{% endfor %}
+</div>
+{% endif %}
+</section>
+{% endif %}
+{% endfor %}

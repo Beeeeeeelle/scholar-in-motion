@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" role="img" aria-label="Replaceable teaching visual">
+  <rect width="640" height="460" fill="#fbf6f7"/>
+  <rect x="82" y="82" width="476" height="245" rx="7" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <path d="M142 147h191M142 190h318M142 233h255" fill="none" stroke="#c8868e" stroke-width="11" stroke-linecap="round" opacity=".6"/>
+  <path d="M158 380c30-63 83-63 113 0M274 380c30-63 83-63 113 0M390 380c30-63 83-63 113 0" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <circle cx="214" cy="328" r="28" fill="#7b9cc8"/>
+  <circle cx="330" cy="328" r="28" fill="#82b896"/>
+  <circle cx="446" cy="328" r="28" fill="#d1a760"/>
+  <text x="32" y="52" fill="#353b44" font-family="Georgia, serif" font-size="25">teaching in practice</text>
+</svg>
+

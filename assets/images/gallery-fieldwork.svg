@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" role="img" aria-label="Replaceable fieldwork visual">
+  <rect width="640" height="460" fill="#f4f7fb"/>
+  <path d="M0 350c109-50 197-34 291 7 104 45 208 42 349-24v127H0Z" fill="#dce8f5"/>
+  <circle cx="177" cy="222" r="67" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <circle cx="356" cy="180" r="54" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <circle cx="485" cy="250" r="63" fill="#fff" stroke="#25282d" stroke-width="5"/>
+  <path d="M232 216c35-8 53-13 75-22M407 201c22 11 39 21 50 30" fill="none" stroke="#e05a2b" stroke-width="5" stroke-dasharray="8 13" stroke-linecap="round"/>
+  <circle cx="177" cy="222" r="13" fill="#7b9cc8"/>
+  <circle cx="356" cy="180" r="13" fill="#82b896"/>
+  <circle cx="485" cy="250" r="13" fill="#d1a760"/>
+  <text x="32" y="52" fill="#353b44" font-family="Georgia, serif" font-size="25">fieldwork / collaboration</text>
+</svg>
+

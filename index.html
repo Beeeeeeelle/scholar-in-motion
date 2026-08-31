@@ -1,0 +1,43 @@
+---
+layout: home
+author_profile: true
+classes: wide
+---
+
+{% assign home = site.data.home %}
+<div class="home-intro" data-reveal>
+  <div class="home-hero">
+    <h1 class="home-hero__headline">
+      <span class="home-typewriter js-typewriter" data-text="{{ home.headline }}">{{ home.headline }}</span>
+    </h1>
+    {% if site.data.components.home.proof_points %}<div class="home-hero__proof" aria-label="Selected themes and current work">
+      {% for point in home.proof_points %}
+      <a class="home-hero__tag home-hero__tag--{{ point.color }}" href="{{ point.url | relative_url }}">{{ point.label }}</a>
+      {% endfor %}
+    </div>{% endif %}
+  </div>
+
+  {% for paragraph in home.intro %}<p>{{ paragraph | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endfor %}
+
+  {% if site.data.components.home.current_initiative and home.initiative.enabled %}
+  <aside class="home-initiative" aria-labelledby="current-initiative-title">
+    <h2 id="current-initiative-title"><span>{{ home.initiative.title }}</span> <em>{{ home.initiative.status }}</em></h2>
+    <p>{{ home.initiative.copy }}</p>
+    <div>
+      <a href="{{ home.initiative.action_url }}">{{ home.initiative.action_label }}</a>
+      <small>{{ home.initiative.note }}</small>
+    </div>
+  </aside>
+  {% endif %}
+</div>
+
+{% if site.data.components.home.guiding_question %}<p class="home-question" data-reveal>
+  {{ home.question }}
+  {% for term in home.question_terms %}<span>{{ term }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}?
+  The sections below can organize that story across connected strands.
+</p>{% endif %}
+
+{% if site.data.components.home.research_map %}{% include research-map.html %}{% endif %}
+{% if site.data.components.home.methods %}{% include methods.html %}{% endif %}
+{% if site.data.components.home.news %}{% include news-feed.html %}{% endif %}
+{% if site.data.components.home.beyond_cv %}{% include beyond-cv.html %}{% endif %}

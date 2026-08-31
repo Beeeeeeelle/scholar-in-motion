@@ -1,0 +1,40 @@
+# Set any value to false when that component does not fit your portfolio.
+home:
+  proof_points: true
+  current_initiative: true
+  guiding_question: true
+  research_map: true
+  methods: true
+  news: true
+  beyond_cv: true
+
+research:
+  map: true
+  strand_stories: true
+  methods: true
+
+publications:
+  featured: true
+  peer_reviewed: true
+  proceedings: true
+  books: false
+  in_progress: false
+
+teaching:
+  overview: true
+  featured: true
+  additional_contexts: true
+  mentoring: false
+  evidence_gallery: false
+
+service:
+  overview: true
+  featured: true
+  leadership: true
+  review: false
+
+design:
+  overview: true
+  featured: true
+  additional_projects: true
+  evaluation: false

@@ -1,0 +1,67 @@
+intro: Keep the complete record chronological, then use optional featured entries and section labels to help readers scan what matters.
+author_note: First or corresponding author
+featured:
+  - title: A featured publication can carry one visual, a short citation, and an optional recognition note.
+    authors: "<strong>Your Name</strong>, Collaborator, A., &amp; Collaborator, B."
+    venue: Journal or press · 2026
+    image: /assets/images/gallery-fieldwork.svg
+    image_alt: Replace with a figure, cover, or project image
+    doi: "#"
+    lead: true
+    recognition:
+      title: Optional recognition or public impact
+      copy: Add this only when an award, translation, dataset, public response, or partnership helps readers understand the work's significance.
+sections:
+  - key: peer_reviewed
+    id: journal-articles
+    title: Peer-Reviewed Journal Articles
+    years:
+      - year: 2026
+        entries:
+          - authors: "<strong>Your Name</strong>, Collaborator, A., &amp; Collaborator, B."
+            title: Full title of a peer-reviewed article.
+            venue: Journal Title, volume(issue), pages.
+            lead: true
+            doi: "#"
+          - authors: "Collaborator, A., <strong>Your Name</strong>, &amp; Collaborator, B."
+            title: Full title of a co-authored article.
+            venue: Journal Title. Advance online publication.
+            status: In press
+      - year: 2025
+        entries:
+          - authors: "<strong>Your Name</strong> &amp; Collaborator, A."
+            title: Another publication listed in chronological order.
+            venue: Journal Title, volume, pages.
+            lead: true
+            doi: "#"
+  - key: proceedings
+    id: proceedings
+    title: Conference Proceedings
+    years:
+      - year: 2025
+        entries:
+          - authors: "<strong>Your Name</strong>, Collaborator, A., &amp; Collaborator, B."
+            title: Title of a proceedings paper or extended abstract.
+            venue: Proceedings of the Conference Name.
+            doi: "#"
+  - key: books
+    id: books
+    title: Books & Chapters
+    years:
+      - year: 2026
+        entries:
+          - authors: "<strong>Your Name</strong> &amp; Collaborator, A."
+            title: Title of a chapter or reference entry.
+            venue: In E. Editor (Ed.), Book title. Publisher.
+            doi: "#"
+  - key: in_progress
+    id: in-progress
+    title: Selected Work in Progress
+    years:
+      - year: Current
+        entries:
+          - authors: "<strong>Your Name</strong> &amp; collaborators."
+            title: Working title of a current study.
+            venue: Manuscript in preparation.
+            status: In progress
+

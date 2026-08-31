@@ -1,0 +1,12 @@
+{% assign overview = include.data.overview %}
+{% if overview and overview.size > 0 %}
+<div class="{{ include.prefix }}-overview" data-reveal-group data-reveal-step="72">
+  {% for item in overview %}
+  <article class="{{ include.prefix }}-overview__card" data-reveal>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.copy }}</p>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
